@@ -16,7 +16,7 @@ export default function Listitem({ result }) {
                     <Link href={`/edit/${item._id}`}>🖌</Link>
                     <p>1월 1일</p>
                     <span onClick={(e)=>{
-                        /* fetch('/api/delete', {
+                        fetch('/api/delete', {
                             method: 'DELETE',
                             // JSON.stringify([1,2,3])
                             body: item._id
@@ -36,9 +36,9 @@ export default function Listitem({ result }) {
                           }).catch((error)=>{
                             //인터넷문제 등으로 실패시 실행할코드
                             console.log(error)
-                          }) */
+                          })
                         //   fetch('/api/test?데이터이름=값')
-                          fetch(`/api/delete?id=${item._id}`)
+                          // fetch(`/api/delete?id=${item._id}`)
                     }}>🪣</span>
                 </div>
             ))}

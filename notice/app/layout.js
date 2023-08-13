@@ -15,7 +15,6 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
     let session = await getServerSession(authOptions);
-    console.log("🚀 ~ file: layout.js:17 ~ RootLayout ~ session:", session);
     return (
         <html lang="en">
             <body className={inter.className}>

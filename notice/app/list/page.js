@@ -6,9 +6,13 @@ export default async function List() {
     const client = await connectDB;
     const db = client.db("forum");
     let result = await db.collection("post").find().toArray();
+    result = result.map((a) => {
+        a._id = a._id.toString();
+        return a;
+    });
     return (
         <div className="list-bg">
-            <Listitem result={result}/>
+            <Listitem result={result} />
         </div>
     );
 }

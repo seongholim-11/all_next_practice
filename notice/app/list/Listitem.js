@@ -15,7 +15,7 @@ export default function Listitem({ result }) {
                     </Link>
                     <Link href={`/edit/${item._id}`}>🖌</Link>
                     <p>1월 1일</p>
-                    <span onClick={()=>{
+                    <span onClick={(e)=>{
                         fetch('/api/delete', {
                             method: 'DELETE',
                             // JSON.stringify([1,2,3])
@@ -29,6 +29,10 @@ export default function Listitem({ result }) {
                           })
                           .then((result)=>{ 
                             //성공시 실행할코드
+                            e.target.parentElement.style.opacity = 0
+                            setTimeout(()=> {
+                                e.target.parentElement.style.display = 'none'
+                            },1000)
                           }).catch((error)=>{
                             //인터넷문제 등으로 실패시 실행할코드
                             console.log(error)

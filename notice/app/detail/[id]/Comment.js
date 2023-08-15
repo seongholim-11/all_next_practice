@@ -27,12 +27,16 @@ export default function Comment() {
     return (
         <div>
             <div>
-                {allComment.map((item, idx) => (
+                {
+                allComment.length > 0 ?
+                allComment.map((item, idx) => (
                     <div key={item._id}>
                         <p>{item.author}</p>
                         <p>{item.comment}</p>
                     </div>
-                ))}
+                )) :
+                <div>로딩 중...</div>
+            }
             </div>
             <input
                 type="text"
